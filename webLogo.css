@@ -1,0 +1,117 @@
+/* *
+	 * webLogo styles
+	 */
+
+/* html body style */
+body {
+	min-width: 357px;
+}
+
+/* html img style */
+img {
+	margin: 5px;
+	border: 2px solid black;
+	vertical-align: middle;
+	width: 75px;
+	height: 75px;
+}
+
+/* html button style */
+button, input[ type="button" ] {
+	vertical-align: baseline;
+	line-height: normal;
+	-webkit-appearance: button;
+
+	display:inline-block;
+	zoom:1;
+	min-width:100px;
+	margin:0px;
+	padding:6px 10px;
+	border:1px solid #b2b2b2;
+	height:auto;
+	width:auto;
+	background:#f5f5f5;
+	float:none;
+	cursor:pointer;
+	background-color:#efefef;
+	background-image:-moz-linear-gradient(top, #f5f5f5, #e6e6e6);
+	background-image:-ms-linear-gradient(top, #f5f5f5, #e6e6e6);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#e6e6e6));
+	background-image:-webkit-linear-gradient(top, #f5f5f5, #e6e6e6);
+	background-image:-o-linear-gradient(top, #f5f5f5, #e6e6e6);
+	background-image:linear-gradient(top, #f5f5f5, #e6e6e6);
+	background-repeat:repeat-x;
+	color:#747474;
+	font-family:helvetica,arial,sans-serif;
+	font-size:13px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	text-decoration:none;
+	text-indent:0;
+	text-justify:auto;
+	text-outline:none;
+	text-overflow:clip;
+	text-shadow:none;
+	text-transform:none;
+	text-wrap:normal;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	-webkit-box-shadow:0px 0px 0px #000000;
+	box-shadow:0px 0px 0px #000000;
+	-webkit-transition:all 0.2s ease 0;
+	-o-transition:all 0.2s ease 0;
+	transition:all 0.2s ease 0;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	user-select:none;
+}
+
+/* the menu panel style */
+.menu_panel {
+	padding: 5px;
+	background: #c0c0c0;
+	border: solid black 2px;
+	border-radius: 10px;
+}
+
+/* the editor panel style */
+.editor_panel {
+	font: 12pt courier;
+	color: white;
+	background: black;
+	padding: 5px;
+	border: solid black 2px;
+	border-radius: 10px;
+}
+
+/* the canvas panel style */
+.canvas_panel {
+	font: 12pt courier;
+	color: white;
+	background: black;
+	padding: 5px;
+	border: solid black 2px;
+	border-radius: 10px;
+}
+	
+/* the source editor style */
+.source_editor {
+	font: 12pt courier;
+	color: green;
+	background: white;
+	padding: 5px;
+	border: solid gray 2px;
+	border-radius: 10px;
+}
+
+/* the canvas turtle style */
+.canvas_turtle {
+	color: blue;
+	background: white;
+	padding: 5px;
+	border: solid gray 2px;
+	border-radius: 10px;
+}
