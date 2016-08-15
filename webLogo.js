@@ -2,7 +2,10 @@
 	 * webLogo init
 	 */
 
+var logoSource;
+	
 function webLogoInit() {
+	logoSource = document.getElementById( "edt_logoSource" );
 }
 
 /* *
@@ -10,12 +13,9 @@ function webLogoInit() {
 	 */
 
 function newScript() {
-	var logoSource = document.getElementById( "edt_logoSource" );
-
 	logoSource.value = "";
 	
-	canvasContext.fillStyle = "#FFFFFF";
-	canvasContext.fillRect( 0, 0, turtleCanvas.width, turtleCanvas.height );
+	clearCanvas();
 }
 
 /* *
@@ -23,14 +23,9 @@ function newScript() {
 	 */
 
 function loadScript() {
-	var logoSource = document.getElementById( "edt_logoSource" );
-	var turtleCanvas = document.getElementById( "canvasTurtle" );
-	var	canvasContext = turtleCanvas.getContext( "2d" );
-
 	logoSource.value = "FORWARD 50";
 	
-	canvasContext.fillStyle = "#FFFFFF";
-	canvasContext.fillRect( 0, 0, turtleCanvas.width, turtleCanvas.height );
+	clearCanvas();
 }
 
 /* *
@@ -38,10 +33,5 @@ function loadScript() {
 	 */
 
 function runScript() {
-	var logoSource = document.getElementById( "edt_logoSource" );
-	var turtleCanvas = document.getElementById( "canvasTurtle" );
-	var	canvasContext = turtleCanvas.getContext( "2d" );
-	
-	canvasContext.font = "30px Arial";
-	canvasContext.fillText( "running ..." + logoSource.value, 10, 50 );
+	showTurtle();
 }

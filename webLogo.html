@@ -14,14 +14,17 @@
 
 <!-- Page body -->
 <body>
+	<!-- menu panel -->
 	<div id="menu" class="menu_panel">
 		<input id="btn_new" type="button" class="button" value="Limpar" onclick="javascript:newScript(); return false;" />
 		<input id="btn_open" type="button" class="button" value="Abrir" onclick="javascript:loadScript(); return false;" />
 		<input id="btn_run" type="button" class="button" value="Executar" onclick="javascript:runScript(); return false;" />
 	</div>
+	<!-- editor panel -->
 	<div id="editor" class="editor_panel">
 		<textarea id="edt_logoSource" class="source_editor" rows="4" cols="80" autofocus></textarea>
 	</div>
+	<!-- canvas panel -->
 	<div id="canvas" class="canvas_panel">
 		<canvas id="canvasTurtle" class="canvas_turtle"></canvas>
 	</div>
@@ -29,6 +32,7 @@
 	<script type="text/javascript">
 		webLogoInit();
 		canvasTurtleInit();
+		showTurtle();
 	</script>
 </body>
 </html>
