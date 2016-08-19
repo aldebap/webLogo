@@ -7,9 +7,9 @@
 
 	<link rel="stylesheet" href="webLogo.css"></link>
 
-	<script type="text/javascript" src="logoInterpreter.js"></script>
 	<script type="text/javascript" src="webLogo.js"></script>
 	<script type="text/javascript" src="canvasTurtle.js"></script>
+	<script type="text/javascript" src="logoInterpreter.js"></script>
 </head>
 
 <!-- Page body -->
@@ -18,7 +18,8 @@
 	<div id="menu" class="menu_panel">
 		<input id="btn_new" type="button" class="button" value="Limpar" onclick="javascript:newScript(); return false;" />
 		<input id="btn_open" type="button" class="button" value="Abrir" onclick="javascript:loadScript(); return false;" />
-		<input id="btn_run" type="button" class="button" value="Executar" onclick="javascript:runScript(); return false;" />
+		<input id="btn_save" type="button" class="button" value="Gravar" onclick="javascript:saveScript(); return false;" />
+		<input id="btn_run" type="button" class="button" value="Executar" onclick="javascript:parseScript( document.getElementById( 'edt_logoSource' ).value ); return false;" />
 	</div>
 	<!-- editor panel -->
 	<div id="editor" class="editor_panel">
@@ -29,6 +30,7 @@
 		<canvas id="canvasTurtle" class="canvas_turtle"></canvas>
 	</div>
 	
+	<!-- initialization script -->
 	<script type="text/javascript">
 		webLogoInit();
 		canvasTurtleInit();

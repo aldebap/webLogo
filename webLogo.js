@@ -2,6 +2,10 @@
 	 * webLogo init
 	 */
 
+function webLogo() {
+	var logoSource;
+}
+
 var logoSource;
 	
 function webLogoInit() {
@@ -27,11 +31,9 @@ function loadScript() {
 	
 	clearCanvas();
 }
-
 /* *
-	 * Run the Logo script from the editor
+	 * Save the Logo script from the editor into a file
 	 */
 
-function runScript() {
-	showTurtle();
+function saveScript() {
 }
