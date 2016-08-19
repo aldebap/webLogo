@@ -1,13 +1,21 @@
-# webLogo
-A web based environment to Logo programming language
-
-To-Do:
-1- fix the bugs with the turtle method ShowTurtle
-2- implement tutle method HideTurtle
-3- implement tutle method Forward
-4- implement tutle method Left
-5- implement tutle method Right
-6- implement tutle method PenDown
-7- implement tutle method PenUp
-8- implement tutle method PenColor
-n- implement the Logo Interpreter
+# webLogo<br />
+A web based environment to Logo programming language<br />
+<br />
+To-Do:<br />
+1- improve the buttons style<br />
+2- implement the File menu with floating menu options<br />
+3- implement Load method<br />
+4- implement Save method<br />
+5- implement tutle method PenColor<br />
+6- implement the Logo Interpreter - Lex parser<br />
+7- implement the Logo Interpreter - Syntax parser<br />
+8- implement the Logo Interpreter - Semantic parser<br />
+<br />
+Done:<br />
+. fix the bugs with the turtle method ShowTurtle<br />
+. implement tutle method HideTurtle<br />
+. implement tutle method Forward<br />
+. implement tutle method Left<br />
+. implement tutle method Right<br />
+. implement tutle method PenDown<br />
+. implement tutle method PenUp<br />
