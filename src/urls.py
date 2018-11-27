@@ -6,10 +6,11 @@
 #	URLs for the "Web LOGO" web server
 ################################################################################
 
-from django.conf.urls import url
+from django.urls import path
+#from django.conf.urls import path
 
 import views
 
 urlpatterns = (
-    url( r'^$', views.index ),
+    path( 'index/', views.index ),
 )

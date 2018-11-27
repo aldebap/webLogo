@@ -17,4 +17,5 @@ settings.configure(
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ),
+    STATIC_URL = '/webApp/',
 )
