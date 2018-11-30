@@ -7,6 +7,8 @@
 ################################################################################
 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index( _request ):
-    return HttpResponse( 'Web LOGO' )
+    return render( _request, 'webLogo.html', {} )
+#    return HttpResponse( 'Web LOGO' )
