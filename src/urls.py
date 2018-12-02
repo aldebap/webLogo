@@ -12,4 +12,5 @@ import  views
 
 urlpatterns = [
     path( 'index/', views.index ),
+    path( 'logoparser/', views.logoParser ),
 ]

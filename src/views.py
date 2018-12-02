@@ -11,4 +11,6 @@ from django.shortcuts import render
 
 def index( _request ):
     return render( _request, 'webLogo.html', {} )
-#    return HttpResponse( 'Web LOGO' )
+
+def logoParser( _request ):
+    return HttpResponse( 'LOGO --> JavaScript' )
