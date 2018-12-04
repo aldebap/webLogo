@@ -14,7 +14,7 @@ def index( _request ):
 
 def logoParser( _request ):
     if "POST" == _request.method:
-        if "square" == _request.POST:
+        if "square" == _request.POST[ "script" ]:
             return HttpResponse( """clearCanvas();
 showTurtle();
 penDown();

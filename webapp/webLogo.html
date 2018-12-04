@@ -19,6 +19,7 @@
 
 <body>
 	<!-- menu panel -->
+	{% csrf_token %}
 	<div id="menu" class="menu_panel">
 		<input id="btn_new" type="button" class="button" value="Limpar" onclick="javascript:newScript(); return false;" />
 		<input id="btn_open" type="button" class="button" value="Abrir" onclick="javascript:loadScript(); return false;" />
