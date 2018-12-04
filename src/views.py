@@ -9,19 +9,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from logo.parser import logoParser
+
 def index( _request ):
     return render( _request, 'webLogo.html', {} )
 
-def logoParser( _request ):
+def webLogoParser( _request ):
     if "POST" == _request.method:
-        if "square" == _request.POST[ "script" ]:
-            return HttpResponse( """clearCanvas();
-showTurtle();
-penDown();
-    
-for( var i = 1; i <= 4; i++ ) {
-    turtleForward( 50 );
-    turtleLeft( 90 );
-}""" )
+        return HttpResponse( logoParser( _request.POST[ "script" ] ) )
 
     return HttpResponse( 'LOGO --> JavaScript' )
