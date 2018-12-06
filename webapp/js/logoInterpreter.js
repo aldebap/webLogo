@@ -34,26 +34,16 @@ function parseScript( _logoScript ) {
 
 function parseScript(_logoScript) {
 
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.open("POST", "http://localhost:8000/logoparser/", true);
-    //    xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
-    //    xmlhttp.onload = () => {
-    //        console.log("object program: \"" + this.responseText + "\"");
-    //    }
-    xmlhttp.onreadystatechange = () => {
-        if (4 === this.readyState && 200 === this.status) {
-            console.log("object program: \"" + this.responseText + "\"");
+    //  call Logo Parser service on the WebLogo server
+    $.ajax({
+        url: "/logoparser/",
+        method: "POST",
+        data: {
+            csrfmiddlewaretoken: document.getElementsByName("csrfmiddlewaretoken")[0].value,
+            script: _logoScript
+        },
+        success: (_result) => {
+            console.log("object program: \"" + _result + "\"");
         }
-    };
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    params = "csrfmiddlewaretoken=" + document.getElementsByName("csrfmiddlewaretoken")[0].value +
-        "&script=" + _logoScript;
-    xmlhttp.send(params);
-}
-
-function callbackFunction(_xmlhttp) {
-    //    if (200 == _xmlhttp.status) {
-    console.log("object program: \"" + _xmlhttp.responseText + "\"");
-    //    }
+    });
 }
