@@ -13,7 +13,6 @@
 	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/webLogo.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/canvasTurtle.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/logoInterpreter.js' %}"></script>
 </head>
 
 <!-- Page body -->
@@ -21,23 +20,30 @@
 <body>
 	<!-- menu panel -->
 	{% csrf_token %}
-	<div id="menu" class="menu_panel">
-		<input id="btn_new" type="button" class="button" value="Limpar" onclick="javascript:newScript(); return false;" />
-		<input id="btn_open" type="button" class="button" value="Abrir" onclick="javascript:loadScript(); return false;" />
-		<input id="btn_save" type="button" class="button" value="Gravar" onclick="javascript:saveScript(); return false;" />
-		<input id="btn_run" type="button" class="button" value="Executar" onclick="javascript:parseScript( document.getElementById( 'edt_logoSource' ).value ); return false;" />
-	</div>
-	<!-- editor panel -->
-	<div id="editor" class="editor_panel">
-		<textarea id="edt_logoSource" class="source_editor" rows="4" cols="80" autofocus></textarea>
-	</div>
-	<!-- canvas panel -->
-	<div id="canvas" class="canvas_panel">
-		<canvas id="canvasTurtle" class="canvas_turtle"></canvas>
+	<ul class="navigation">
+		<li class="nav-item"><a id="btn_new" onclick="javascript:newScript(); return false;">Limpar</a></li>
+		<li class="nav-item"><a id="btn_open" onclick="javascript:loadScript(); return false;">Abrir</a></li>
+		<li class="nav-item"><a id="btn_save" onclick="javascript:saveScript(); return false;">Gravar</a></li>
+		<li class="nav-item"><a id="btn_run" onclick="javascript:parseScript(); return false;">Executar</a></li>
+	</ul>
+
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<label for="nav-trigger"></label>
+
+	<div class="site-wrap">
+		<!-- editor panel -->
+		<div id="editor" class="editor_panel">
+			<textarea id="edt_logoSource" class="source_editor" rows="4" cols="80" autofocus></textarea>
+		</div>
+		<!-- canvas panel -->
+		<div id="canvas" class="canvas_panel">
+			<canvas id="canvasTurtle" class="canvas_turtle"></canvas>
+		</div>
 	</div>
 
 	<!-- initialization script -->
 	<script type="text/javascript">
+		//	init canvas
 		webLogoInit();
 		canvasTurtleInit();
 		showTurtle();

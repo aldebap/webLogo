@@ -5,6 +5,8 @@
 /* html body style */
 body {
 	min-width: 357px;
+	background: white;
+	overflow-x: hidden;
 }
 
 /* html img style */
@@ -14,6 +16,20 @@ img {
 	vertical-align: middle;
 	width: 75px;
 	height: 75px;
+}
+
+
+/* html a style */
+a {
+	font: 12pt courier;
+	color: black;
+	background: gray;
+	padding: 5px;
+	height:auto;
+	width:auto;
+	cursor:pointer;
+	border: solid black 2px;
+	border-radius: 10px;
 }
 
 /* html button style */
@@ -69,19 +85,91 @@ button, input[ type="button" ] {
 	user-select:none;
 }
 
-/* the menu panel style */
-.menu_panel {
-	padding: 5px;
-	background: #c0c0c0;
-	border: solid black 2px;
-	border-radius: 10px;
+/* the navigation menu style */
+.navigation {
+    list-style: none;
+    background: #111;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.nav-item a {
+	display: block;
+	padding: 1em;
+ 	background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+ 	color: white;
+	font-size: 1.2em;
+	text-decoration: none;
+	transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+	color: black;
+    background-color: gray;
+/*
+  color: #c74438;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+*/
+}
+
+/* the navigation menu trigger style */
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* the label for navigation menu trigger style */
+label[for="nav-trigger"] {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+	z-index: 2;
+	width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+}
+
+.nav-trigger:checked + label {
+    left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+    left: 200px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+.nav-trigger + label, .site-wrap {
+    transition: left 0.2s;
+}
+
+/* the page content style */
+.site-wrap {
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+	z-index: 1;
+	padding: 4em;
+	background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);
+	background-size: 200%;
 }
 
 /* the editor panel style */
 .editor_panel {
 	font: 12pt courier;
-	color: white;
-	background: black;
+	color: black;
+	background: white;
 	padding: 5px;
 	border: solid black 2px;
 	border-radius: 10px;
@@ -90,8 +178,8 @@ button, input[ type="button" ] {
 /* the canvas panel style */
 .canvas_panel {
 	font: 12pt courier;
-	color: white;
-	background: black;
+	color: black;
+	background: white;
 	padding: 5px;
 	border: solid black 2px;
 	border-radius: 10px;

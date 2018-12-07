@@ -7,9 +7,9 @@ function webLogo() {
 }
 
 var logoSource;
-	
+
 function webLogoInit() {
-	logoSource = document.getElementById( "edt_logoSource" );
+	logoSource = document.getElementById("edt_logoSource");
 }
 
 /* *
@@ -18,7 +18,7 @@ function webLogoInit() {
 
 function newScript() {
 	logoSource.value = "";
-	
+
 	clearCanvas();
 }
 
@@ -28,7 +28,7 @@ function newScript() {
 
 function loadScript() {
 	logoSource.value = "FORWARD 50";
-	
+
 	clearCanvas();
 }
 /* *
@@ -36,4 +36,24 @@ function loadScript() {
 	 */
 
 function saveScript() {
+}
+
+/* *
+	 * Call Logo parser service
+	 */
+
+function parseScript() {
+
+	//  call Logo Parser service on the WebLogo server
+	$.ajax({
+		url: "/logoparser/",
+		method: "POST",
+		data: {
+			csrfmiddlewaretoken: document.getElementsByName("csrfmiddlewaretoken")[0].value,
+			script: logoSource.value
+		},
+		success: (_result) => {
+			console.log("object program: \"" + _result + "\"");
+		}
+	});
 }
