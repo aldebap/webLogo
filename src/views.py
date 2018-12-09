@@ -18,4 +18,4 @@ def webLogoParser( _request ):
     if "POST" == _request.method:
         return HttpResponse( logoParser( _request.POST[ "script" ] ) )
 
-    return HttpResponse( 'LOGO --> JavaScript' )
+    return HttpResponse( "alert( 'LOGO --> JavaScript' );" )

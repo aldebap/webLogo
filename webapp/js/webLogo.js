@@ -54,6 +54,7 @@ function parseScript() {
 		},
 		success: (_result) => {
 			console.log("object program: \"" + _result + "\"");
+			eval(_result);
 		}
 	});
 }
