@@ -6,8 +6,11 @@
 #	The Logo Parser
 ################################################################################
 
-import re
 import sys
+
+#from logo.lexicalParser import lexicalParser
+#from logo.syntaticParser import syntaticParser
+import re
 
 def logoParser( _script ):
     if "square" == _script:
@@ -22,7 +25,13 @@ for( var i = 1; i <= 4; i++ ) {
     }, 1000 );
 }"""
 
-    return "alert( \"" + str( lexicalParser( _script ) ) + "\" );"
+    lexicTree = lexicalParser( _script )
+    sys.stderr.write( "[debug] Lexic tree: " + str( lexicTree ) + "\n" )
+
+    syntaticTree = syntaticParser( lexicTree )
+    sys.stderr.write( "[debug] Syntatic tree: " + str( syntaticTree ) + "\n" )
+
+    return "alert( \"" + str( syntaticTree ) + "\" );"
 
 #   reserved words
 
@@ -41,6 +50,20 @@ reservedWords = {
 reserved = "reserved"
 number = "number"
 identifier = "identifier"
+
+#   semantical elements
+
+forwardOperation = "forward"
+abbreviateForwardOperation = "abbreviateForward"
+leftOperation = "left"
+
+#   syntatic paths
+
+logoSyntax = {
+    forwardOperation: [ forward, number ],
+    abbreviateForwardOperation: [ abbreviatedForward, number ],
+    leftOperation: [ left, number ],
+}
 
 #   lexical parser for Logo script
 
@@ -85,4 +108,23 @@ def lexicalParser( _script ):
 #   syntatic parser for Logo script
 
 def syntaticParser( _lexicTree ):
-    sys.stderr.write( "[debug] Lexic tree: " + str( _lexicTree ) + "\n" )
+
+    syntaticTree = []
+
+    for instruction in _lexicTree:
+
+        instructionPath = []
+
+        for element in instruction:
+            for subElement in element.keys():
+                if reversed == subElement:
+                    instructionPath.append( element[ subElement ] )
+                else:
+                    instructionPath.append( subElement )
+
+        for pathName in logoSyntax.keys():
+            #   TODO: need to compare the two arrays to fix the bug
+            if len( instructionPath ) == len( logoSyntax[ pathName ] ) and instructionPath == logoSyntax[ pathName ]:
+                syntaticTree.append( pathName )
+
+    return syntaticTree
