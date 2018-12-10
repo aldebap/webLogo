@@ -117,14 +117,21 @@ def syntaticParser( _lexicTree ):
 
         for element in instruction:
             for subElement in element.keys():
-                if reversed == subElement:
+                if reserved == subElement:
                     instructionPath.append( element[ subElement ] )
                 else:
                     instructionPath.append( subElement )
 
         for pathName in logoSyntax.keys():
-            #   TODO: need to compare the two arrays to fix the bug
-            if len( instructionPath ) == len( logoSyntax[ pathName ] ) and instructionPath == logoSyntax[ pathName ]:
-                syntaticTree.append( pathName )
+            if len( instructionPath ) == len( logoSyntax[ pathName ] ):
+                identicalPaths = True
+
+                for i in range( len( instructionPath ) ):
+                    if instructionPath[ i ] != logoSyntax[ pathName ][ i ]:
+                        identicalPaths = False
+                        break
+
+                if True == identicalPaths:
+                    syntaticTree.append( pathName )
 
     return syntaticTree
